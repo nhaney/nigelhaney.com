@@ -1,22 +1,32 @@
 import React from "react"
-import { Link } from "gatsby"
 
 import Layout from "../components/layout"
-import Image from "../components/image"
 import SEO from "../components/seo"
+import resume from "../assets/Nigel-Haney-Resume.pdf"
 
-const IndexPage = () => (
-  <Layout>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </Layout>
-)
+const IndexPage = () => {
+  return (
+    <Layout>
+      <SEO title="Home" />
+      <h1 title="General Kenobi">
+        <span role="img" aria-label=":wave:">
+          👋
+        </span>
+        Hello there!
+      </h1>
+      <p>
+        I am a software developer primarily interested in backend web
+        development and developer tools currently employed as a Software
+        Engineer by <a href="https://www.parsons.com">Parsons Corporation</a>.
+        You can find my resume <a href={resume}>here</a>.
+        <br />
+        <br />
+        In my spare time outside of work I like to{" "}
+        <a href="https://youtu.be/T4j9RSNbssU">speedrun video games</a>, learn
+        about music production, and develop games.
+      </p>
+    </Layout>
+  )
+}
 
 export default IndexPage
