@@ -14,8 +14,6 @@ const Header = ({ siteTitle }) => (
         margin: `0 auto`,
         maxWidth: 960,
         padding: `1.45rem 1.0875rem`,
-        borderBottom: `1px solid`,
-        borderImage: `linear-gradient(45deg, black, white) 1`,
       }}
     >
       <Styled.h1 style={{ margin: 0 }}>
@@ -30,6 +28,14 @@ const Header = ({ siteTitle }) => (
         </Link>
       </Styled.h1>
     </div>
+    <hr
+      style={{
+        border: `0`,
+        height: `1px`,
+        background: `linear-gradient(45deg, black, white)`,
+        maxWidth: 960,
+      }}
+    />
   </header>
 )
 

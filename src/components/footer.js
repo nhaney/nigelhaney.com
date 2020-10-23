@@ -57,16 +57,22 @@ const Footer = ({ socialLinks }) => {
 
   return (
     <footer>
+      <hr
+        style={{
+          border: `0`,
+          height: `1px`,
+          background: `linear-gradient(45deg, black, white)`,
+          maxWidth: 960,
+        }}
+      />
       <div
         style={{
-          margin: `0 auto`,
           maxWidth: 960,
+          margin: `0 auto`,
           padding: `1.45rem 1.0875rem`,
           display: `flex`,
           flexDirection: `row`,
           justifyContent: `space-between`,
-          borderTop: `1px solid`,
-          borderImage: `linear-gradient(45deg, black, white) 1`,
         }}
       >
         <div
