@@ -1,6 +1,4 @@
-Personal website developed with [Gatsby](https://www.gatsbyjs.com/).
+Source of `nigelhaney.com`. 
 
-Future plans:
-* Dark Mode
-* Markdown blog
-* WASM games
+Developed with Tailwind CSS and Vanilla Javascript.
+

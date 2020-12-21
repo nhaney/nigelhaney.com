@@ -1,0 +1,26 @@
+{
+  "name": "nigelhaney.com",
+  "version": "1.0.0",
+  "description": "Source of `nigelhaney.com`.",
+  "main": "index.js",
+  "scripts": {
+    "build": "postcss css/styles.css -o public/css/tailwind.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nhaney/nigelhaney.com.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/nhaney/nigelhaney.com/issues"
+  },
+  "homepage": "https://github.com/nhaney/nigelhaney.com#readme",
+  "dependencies": {
+    "autoprefixer": "^10.1.0",
+    "postcss": "^8.2.1",
+    "postcss-cli": "^8.3.1",
+    "tailwindcss": "^2.0.2"
+  }
+}
