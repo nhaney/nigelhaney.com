@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Nigel Haney</title>
+    <meta name="description" content="Nigel Haney's Homepage">
+    <meta name="author" content="Nigel Haney">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+    <link href="/css/tailwind.css" rel="stylesheet">
+    <link href="/css/icons.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen justify-between">
+    <header class="bg-gray-200 border-b-2 border-black">
+        <div class="flex flex-row justify-between max-w-3xl m-auto p-2 items-center">
+            <div class="py-8">
+                <a href="/">
+                    <h1 class="text-4xl font-bold font-mono hover:text-green-500">
+                        Nigel Haney
+                    </h1>
+                </a>
+            </div>
+            <div class="py-8">
+                <h1>
+                    <a id="game-link" class="underline hover:text-blue-500" href="/fish-game" hidden="true">
+                        Play a game
+                    </a>
+                </h1>
+            </div>
+        </div>
+    </header>
+    <main class="mb-auto max-w-3xl mx-auto p-2 flex-1">
+        <div class="flex flex-col justify-start">
+            <div>
+                <div class="my-8 border-b">
+                    <h1 class="text-3xl font-bold self-center my-5">
+                        About me
+                    </h1>
+                </div>
+            </div>
+            <div class="flex md:flex-row flex-col justify-between">
+                <div class="flex flex-col justify-start">
+                    <div>
+                        <h2 class="text-2xl font-bold" title="General Kenobi">
+                            <span role="img" aria-label=":wave:">
+                              👋
+                            </span>
+                            Hello there!
+                        </h2>
+                    </div>
+                    <div class="mx-3">
+                        <p class="my-5 text-lg leading-7">
+                            I am a software developer primarily interested in backend web
+                            development and developer tools currently employed as a Software
+                            Engineer by <a class="underline hover:text-blue-500" href="https://www.parsons.com">Parsons Corporation</a>.
+                        <p class="my-5 text-lg leading-7">
+                            You can find my resume <a class="underline hover:text-blue-500" href="/resources/Nigel-Haney-Resume.pdf">here</a>.
+                        </p>
+                        <p class="my-5 text-lg leading-7">
+                            In my spare time outside of work I am interested in:
+                            <ul class="list-disc list-inside my-5 text-lg leading-7">
+                                <li>
+                                    <span role="img" aria-label=":speedrunner:">
+                                    🎮🏃
+                                    </span>
+                                    <a class="underline hover:text-blue-500" href="https://youtu.be/T4j9RSNbssU">
+                                        Speedrunning video games
+                                    </a>
+                                </li>
+                                <li>
+                                    <span role="img" aria-label=":musicprod:">
+                                    🎵🎛️
+                                    </span>
+                                    Music production
+                                </li>
+                                <li>
+                                    <span role="img" aria-label=":gamedev:">
+                                    🎮💻
+                                    </span>
+                                    Game development
+                                </li>
+                            </ul>
+                        </p>
+                    </div>
+                </div>
+                <div class="border-t-2 md:border-l-2 md:border-t-0 md:px-5 py-5 flex md:flex-col flex-row justify-center items-center">
+                    <div class="mx-3 md:mb-6 text-xl font-bold">
+                        Contact:
+                    </div>
+                    <div class="md:my-3 mx-3 text-4xl hover:text-blue-500">
+                        <a href="https://www.linkedin.com/in/nigel-haney/"><span class="icon-linkedin"></span></a>
+                    </div>
+                    <div class="md:my-3 mx-3 text-4xl hover:text-blue-500">
+                        <a href="mailto: nigel.haney27@gmail.com"><span class="icon-mail"></span></a>
+                    </div>
+                    <div class="md:my-3 mx-3 text-4xl hover:text-blue-500">
+                        <a href="https://github.com/nhaney"><span class="icon-github"></span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer class="bg-gray-200 border-t-2 border-black">
+        <div class="flex flex-row justify-end max-w-3xl m-auto p-2">
+            <div class="p-8">
+                <p>
+                © 2020, 
+                <a class="underline hover:text-blue-500 text-right" href="https://github.com/nhaney/nigelhaney.com">
+                    Source on GitHub
+                </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script type="module">
+    import disableWebGLFeatures from '/js/utils.js'
+    disableWebGLFeatures();
+</script>
+</html>

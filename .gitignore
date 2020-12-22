@@ -56,7 +56,10 @@ typings/
 
 # gatsby files
 .cache/
-public
+# TODO: Build website properly and add this back in
+# public
+# TODO: take this out when build is worked out
+public/css/tailwind.css
 
 # Mac files
 .DS_Store
@@ -68,5 +71,4 @@ yarn-error.log
 # Yarn Integrity file
 .yarn-integrity
 
-# built files
-public/build
+
