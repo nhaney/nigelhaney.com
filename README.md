@@ -25,6 +25,12 @@ Example usage:
             "info": { // info is extra data needed to get the google doc
                 "document_id": <google doc id>
             }
+        },
+        {
+            "bundle_info": {
+                "archive_type": "zip",
+            },
+            ""
         }
     ],
     // bundles are like resources, but include multiple files in an archive. 
@@ -50,6 +56,7 @@ Example usage:
             {
                 "description": "this is an interest of mine",
                 "link": null,
+                "intro": "❓" // this will not be a part of the link
             },
             {
                 "description": "this is another interest of mine",

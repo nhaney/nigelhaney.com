@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Nigel Haney</title>
+    <meta name="description" content="Nigel Haney's Homepage">
+    <meta name="author" content="Nigel Haney">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>👨‍💻</text></svg>">
+    <link href="/css/tailwind.css" rel="stylesheet">
+    <link href="/css/icons.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen justify-between">
+    <header class="bg-gray-200 border-b-2 border-black">
+        <div class="flex flex-row justify-between max-w-3xl m-auto p-2 items-center">
+            <div class="py-8">
+                <a href="/">
+                    <h1 class="text-4xl font-bold font-mono hover:text-green-500">
+                        Nigel Haney
+                    </h1>
+                </a>
+            </div>
+            <div class="py-8">
+                <h1>
+                    <a id="game-link" class="underline hover:text-blue-500" href="/fish-game" hidden="true">
+                        Play a game
+                    </a>
+                </h1>
+            </div>
+        </div>
+    </header>
+    <main class="flex flex-col justify-center items-center">
+        <h2 class="text-4xl m-5 font-bold">
+            Stay off the Line! Remastered
+        </h2>
+        <div id="game-container" class="m-5 p-2 border-dotted border-black">
+            <canvas id="fish-game" class="rounded"/>
+        </div>
+        <div class="m-5">
+            <h3 class="text-xl font-bold text-center">
+                How to play:
+            </h3>
+            <p class="my-5 text-lg leading-7 text-center">
+                Use <span class="font-bold">arrow keys</span> or <span class="font-bold">WASD</span> to move your fish around the ocean.
+            </p>
+            <p class="my-5 text-lg leading-7 text-center">
+                Press <span class="font-bold">space</span> to use a boost. To get more boosts, eat more worms!
+            </p>
+            <p class="my-5 text-lg leading-7 text-center">
+                Don't starve, and most importantly, <span class="font-bold">Stay Off the Line!</span>            
+            </p>
+            <p class="my-5 text-lg leading-7 text-center">
+                <a class="underline hover:text-blue-500 text-right" href="#" onclick="var c = document.getElementById('fish-game'); let x = (c.webkitRequestFullScreen || c.requestFullscreen); x.call(c);">Click here to play fullscreen!</a>
+            </p>
+            <p class="my-5 text-lg leading-7 text-center">
+                <a class="underline hover:text-blue-500 text-right" href="https://github.com/nhaney/fish-game">You can find the source of this game here.</a>
+            </p>
+            <p class="my-5 text-lg leading-7 text-center">
+                <a class="underline hover:text-blue-500 text-right" href="https://js13kgames.com/games/stay-off-the-line/index.html">Play the original here! (js13k 2018 entry)</a>
+            </p>
+        </div>
+    </main>
+    <footer class="bg-gray-200 border-t-2 border-black">
+        <div class="flex flex-row justify-end max-w-3xl m-auto p-2">
+            <div class="p-8">
+                <p>
+                © 2020, 
+                <a class="underline hover:text-blue-500 text-right" href="https://github.com/nhaney/nigelhaney.com">
+                    Source on GitHub
+                </a>
+                </p>
+            </div>
+        </div>
+    </footer>
+</body>
+<script type="module">
+    import init from './target/fish-game.js'
+    import disableWebGLFeatures from '/js/utils.js'
+    disableWebGLFeatures();
+    init();
+</script>
+</html>
