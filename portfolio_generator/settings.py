@@ -3,7 +3,9 @@ Defines schemas for the configuration file that is the input to the static site 
 """
 from typing import List, Optional
 
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ValidationError
+
+from .resource_fetchers import RESOURCE_TYPE_FETCHERS
 
 
 class PortfolioResource(BaseModel):
@@ -16,7 +18,20 @@ class PortfolioResource(BaseModel):
     }
     """
 
-    pass
+    name: str = Field(...)
+    destination: str = Field("resources/")
+    add_unique_id: bool = Field(False)
+    resource_type: str = Field(...)
+
+    def validate_resource_type(self, value):
+        if value not in RESOURCE_TYPE_FETCHERS:
+            raise ValidationError(
+                "Resource type must be one of: {', '.join(VALID_RESOURCE_TYPES)}, not {value}",
+                self.__class__,
+            )
+
+    def validate(self):
+        pass
 
 
 class ProfileJob(BaseModel):
