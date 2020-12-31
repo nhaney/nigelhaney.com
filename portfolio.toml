@@ -1,0 +1,22 @@
+[profile.job]
+title = "Software Engineer"
+employer = "Parsons Corporation"
+employer_link = "https://parsons.com"
+
+[profile.social_links]
+github_url = "https://github.com/nhaney"
+linkedin_url = "https://linkedin.com/in/nigel-haney"
+email = "nigel.haney27@gmail.com"
+
+[[profile.interests]]
+name = "Speedrunning video games"
+brief = "🎮🏃"
+link = "https://www.youtube.com/watch?v=T4j9RSNbssU&feature=youtu.be"
+
+[[profile.interests]]
+name = "Music production"
+brief = "🎵🎛️ "
+
+[[profile.interests]]
+name = "Game development"
+brief = "🎮💻"

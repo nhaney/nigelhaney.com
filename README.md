@@ -8,80 +8,35 @@ Developed with Tailwind CSS and Vanilla Javascript and a custom python static si
 
 `portfolio-generator` is a simple static site generator that will take a configuration file
 `portfolio.json` and the name of the a source directory and will statically generate a site based on 
-the configuration file. 
+the configuration file.
 
-Example usage:
+The design goals of this generator are:
+- Not to abstract away directory hierarchy of site
+- Not to abstract away writing HTML
+  - But allow for templating that HTML for reusability across pages
+- Provide settings file that can be used to fill in basic information that is necessary (or at least I use)
+  for a portfolio
+- Allow resources to be fetched from arbitrary sources
+  - New sources should be pluggable
+  - Resources should be able to be placed anywhere in site directory hierarchy
+  - Resources should optionally allow a unique identifier to be included on them to update browser caches 
+    on updates
+  - When building the site, throw an error by default if a resource is fetched but unused in any of the
+    static files
+- Able to build site from one command allowing for easy deployment on a platform like Netlify
 
-`portfolio.json`
-```json
-{
-    // resources have a name which will be formatted like: <resource name>-<uuid>.<resource extension> in the 
-    // final build. This is to prevent web browser caching of previous versions.
-    "resources": [ 
-        {
-            "name": "resume.pdf", // will be generated as resume-5c7e1696.pdf
-            "destination": "<resource path>", // path in built directory where this resource will be located. Defaults to `resources/`
-            "resource_type": "googledoc", // there are different types of resources that will be pluggable to the generator
-            "info": { // info is extra data needed to get the google doc
-                "document_id": <google doc id>
-            }
-        },
-        {
-            "bundle_info": {
-                "archive_type": "zip",
-            },
-            ""
-        }
-    ],
-    // bundles are like resources, but include multiple files in an archive. 
-    // All of the files extracted are appended a uuid as well to prevent caching between versions
-    "bundles": [
-        {
-            "destination": "destination/directory/",
-            archive_type": "zip" // eventually support .tar, .gz as well,
-            "resource_type": "github_actions_artifact",
-            "info": {
-                "repo": "nhaney/fish-game",
-                "artifact_regex": ".*-WASM-.*" // regex that will match the artifact name
-            }
-        }
-    ],
-    "profile": { // optional key value data that can be used to fill out a portfolio / about me page
-        "job": {
-            "title": "my job title",
-            "employer": "my employer",
-            "employer_link": "myemployer.com"
-        },
-        "interests": [
-            {
-                "description": "this is an interest of mine",
-                "link": null,
-                "intro": "❓" // this will not be a part of the link
-            },
-            {
-                "description": "this is another interest of mine",
-                "link": "interests.com#mysecondinterest"
-            }
-        ],
-        "social_links": {
-            "github_url": "https://github.com/nhaney",
-            "linkedin_url": "https://linkedin.com/in/nigel-haney",
-            "email": "nigel.haney27@gmail.com"
-        }
-    },
-    "extra": { // any extra key value data that is needed can go here
-        "extra": "data"
-    }
-}
-```
+## Current supported resource types
 
-Example of templated html using the above config (uses Jinja2 templating):
+### Google doc export
+- Fetch a google doc by ID and export it
+  - Specify id in config file
+  - Specify export type in config file (pdf, docx, etc.)
+  - Pass in credentials through environment variables
 
-```html
-<!doctype html>
-<html lang="en">
-<body>
-    <h1></h1>
-</body>
-</html>
-```
+### Github artifact
+  - Fetch a github artifact
+    - give a repo
+    - optionally specify a regex for the artifact to pull
+    - specify entry points that must be directly referred to in any of the templates
+    - Pass in credentials through environment variables
+

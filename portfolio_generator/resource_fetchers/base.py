@@ -1,10 +1,10 @@
 from abc import ABC, abstractmethod
 
-from ..settings import PortfolioResource
+#  from ..settings import PortfolioResource
 
 
 class ResourceFetcher(ABC):
-    def __init__(self, settings: PortfolioResource) -> None:
+    def __init__(self, settings) -> None:
         self.settings = settings
 
     @abstractmethod
