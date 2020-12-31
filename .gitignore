@@ -72,7 +72,7 @@ yarn-error.log
 .yarn-integrity
 
 # python stuff
-.venv
+*.venv*
 .env
 *egg*
 *__pycache__*
