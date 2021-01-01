@@ -1,0 +1,27 @@
+{% extends "base.html" %} 
+{% block content %}
+<h2>About me</h2>
+<p>
+  Hello there, this is an example portfolio to test the <code>portfolio-generator</code>.
+</p>
+<p>
+  This section is to show job information. This example site's owner is currently employed by 
+  <a href="{{ portfolio.profile.job.employer_link }}">
+    {{ portfolio.profile.job.employer }}
+  </a>
+  as a {{ portfolio.profile.job.title }}.
+</p>
+<p>
+  This section is to show information about interests. This example sites's owner is interested in:
+  <ul>
+    {% for interest in portfolio.profile.interests %}
+      <li>
+        {{ interest.brief }}: {{ interest.name }}
+        {% if interest.link %}
+        <a href="{{ interest.link }}">Here is a link to something relevant to this interest</a>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</p>
+{% endblock %}

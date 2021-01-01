@@ -12,5 +12,5 @@ class ResourceFetcher(ABC):
         ...
 
     @abstractmethod
-    async def fetch(self):
+    async def fetch(self) -> bool:
         ...

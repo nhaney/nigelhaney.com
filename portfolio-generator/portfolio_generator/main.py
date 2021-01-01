@@ -1,5 +1,4 @@
 from pathlib import Path
-from typing import Optional
 from click.exceptions import Exit
 
 import pydantic
@@ -7,6 +6,7 @@ import typer
 
 from .builder import build_site
 from .settings import PortfolioGenSettings
+from .resource_fetchers.google_doc import GoogleDocFetcher
 
 app = typer.Typer()
 
@@ -32,9 +32,11 @@ def main(
     print(f"Loaded portfolio: {portfolio}")
 
     # fetch resources asynchronously
-    resources = {}
+    fetcher = GoogleDocFetcher(settings=PortfolioGenSettings)
+    breakpoint()
+    fetcher.fetch()
 
-    build_site(portfolio, resources, site_dir, output_dir)
+    build_site(portfolio, {}, site_dir, output_dir)
 
 
 def run_cli():

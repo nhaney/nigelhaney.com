@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+  <body >
+    <header>
+      <a href="/">
+        <h1>
+          My portfolio site
+        </h1>
+      </a>
+    </header>
+    <main>
+      {% block content %}{% endblock %}
+    </main>
+    <footer>
+      <h2>Thanks for viewing my site!</h2>
+      <p>You can contact me at the following links</p>
+      <ul>
+        <li>
+          <a href="{{ portfolio.profile.social_links.github_url }}">Github</a>
+        </li>
+        <li>
+          <a href="mailto: {{ portfolio.profile.social_links.email }}">Email</a>
+        </li>
+        <li>
+          <a href="{{ portfolio.profile.social_links.linkedin_url }}">Linkedin</a>
+        </li>
+      </ul>
+    </footer>
+  </body>
+</html>

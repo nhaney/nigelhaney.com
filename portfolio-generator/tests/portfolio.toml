@@ -1,0 +1,23 @@
+[profile.job]
+title = "Developer"
+employer = "Example Co."
+employer_link = "https://example.com"
+
+[profile.social_links]
+github_url = "https://github.com/"
+linkedin_url = "https://linkedin.com/"
+email = "example@example.com"
+
+[[profile.interests]]
+name = "Python coding"
+brief = "🐍"
+link = "https://python.org"
+
+[[profile.interests]]
+name = "Making youtube videos"
+brief = "📺"
+link = "https://youtube.com"
+
+[[profile.interests]]
+name = "Walking around"
+brief = "🚶"
