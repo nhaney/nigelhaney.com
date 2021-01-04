@@ -1,12 +1,12 @@
 from pathlib import Path
-from click.exceptions import Exit
 
 import pydantic
 import typer
+from click.exceptions import Exit
 
 from .builder import build_site
+from .resource_fetchers.google_doc import GoogleDocExportFetcher
 from .settings import PortfolioGenSettings
-from .resource_fetchers.google_doc import GoogleDocFetcher
 
 app = typer.Typer()
 
@@ -33,7 +33,6 @@ def main(
 
     # fetch resources asynchronously
     fetcher = GoogleDocFetcher(settings=PortfolioGenSettings)
-    breakpoint()
     fetcher.fetch()
 
     build_site(portfolio, {}, site_dir, output_dir)

@@ -24,6 +24,7 @@ class PortfolioResource(BaseModel):
     destination: str = Field("resources/")
     add_unique_id: bool = Field(False)
     resource_type: str = Field(...)
+    extra: dict = Field(...)
 
     def validate_resource_type(self, value):
         if value not in RESOURCE_TYPE_FETCHERS:
@@ -31,9 +32,6 @@ class PortfolioResource(BaseModel):
                 "Resource type must be one of: {', '.join(VALID_RESOURCE_TYPES)}, not {value}",
                 self.__class__,
             )
-
-    def validate(self):
-        pass
 
 
 class ProfileJob(BaseModel):

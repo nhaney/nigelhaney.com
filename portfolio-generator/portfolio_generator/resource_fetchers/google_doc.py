@@ -1,16 +1,17 @@
 import asyncio
 import io
-import os
 import json
+import os
+
 from apiclient import discovery
 from google.oauth2 import service_account
-from googleapiclient.http import MediaIoBaseDownload
 from googleapiclient.errors import HttpError
+from googleapiclient.http import MediaIoBaseDownload
 from httplib2 import HttpLib2Error
 from pydantic import BaseModel, Field
 
-from .base import ResourceFetcher
 from ..exceptions import ResourceFetchError
+from .base import ResourceFetcher
 
 
 class GoogleDocExtraInfo(BaseModel):
@@ -23,8 +24,7 @@ class GoogleDocExtraInfo(BaseModel):
 
 
 class GoogleDocExportFetcher(ResourceFetcher):
-    def validate_settings(self):
-        return super().validate_settings()
+    extra_config_cls = GoogleDocExtraInfo
 
     async def fetch(self) -> bool:
         credentials = self._load_google_creds_from_env()
@@ -55,7 +55,7 @@ class GoogleDocExportFetcher(ResourceFetcher):
         try:
             service = discovery.build("drive", "v3", credentials=credentials)
             request = service.files().export_media(
-                fileId=self.settings.file_id, mimeType=self.settings.export_type
+                fileId=self.fetcher_config.file_id, mimeType=self.settings.export_type
             )
             document_bytes = io.BytesIO()
             downloader = MediaIoBaseDownload(document_bytes, request)
