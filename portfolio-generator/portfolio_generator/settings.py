@@ -2,24 +2,16 @@
 Defines schemas for the configuration file that is the input to the static site generator
 """
 from pathlib import Path
-from typing import List, Optional
+from typing import List, Optional, Set
 
 import toml
-from pydantic import BaseModel, Field, ValidationError
+from pydantic import BaseModel, Field, ValidationError, HttpUrl
 
 from .resource_fetchers import RESOURCE_TYPE_FETCHERS
 
 
-class PortfolioResource(BaseModel):
-    """
-    "name": "resume.pdf", // will be generated as resume-5c7e1696.pdf
-    "destination": "<resource path>", // path in built directory where this resource will be located. Defaults to `resources/`
-    "resource_type": "googledoc", // there are different types of resources that will be pluggable to the generator
-    "info": { // info is extra data needed to get the google doc
-        "document_id": <google doc id>
-    }
-    """
-
+class ResourceSetting(BaseModel):
+    id: str = Field(...)
     name: str = Field(...)
     destination: str = Field("resources/")
     add_unique_id: bool = Field(False)
@@ -53,13 +45,13 @@ class ProfileInterest(BaseModel):
 
 
 class ProfileSocialLinks(BaseModel):
-    github_url: Optional[str] = Field(
-        ..., description="The link to your github profile"
+    github_url: Optional[HttpUrl] = Field(
+        None, description="The link to your github profile"
     )
-    linkedin_url: Optional[str] = Field(
-        ..., description="The link to your linkedin profile"
+    linkedin_url: Optional[HttpUrl] = Field(
+        None, description="The link to your linkedin profile"
     )
-    email: Optional[str] = Field(..., description="Your email address")
+    email: Optional[str] = Field(None, description="Your email address")
 
 
 class PortfolioProfile(BaseModel):
@@ -69,8 +61,19 @@ class PortfolioProfile(BaseModel):
 
 
 class PortfolioGenSettings(BaseModel):
-    #  resources: List[PortfolioResource]
+    resource_settings: List[ResourceSetting]
     profile: PortfolioProfile
+
+    def validate_resource_settings(self, resource_settings: List[ResourceSetting]):
+        seen_settings: Set[str] = set()
+        for resource_setting in resource_settings:
+            if resource_setting.name in seen_settings:
+                raise ValidationError(
+                    f"Found duplicate resource name: {resource_setting.name}",
+                    self.__class__,
+                )
+
+            seen_settings.add(resource_setting.name)
 
     @classmethod
     def from_toml(cls, path: Path) -> "PortfolioGenSettings":

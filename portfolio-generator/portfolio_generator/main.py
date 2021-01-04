@@ -32,7 +32,7 @@ def main(
     print(f"Loaded portfolio: {portfolio}")
 
     # fetch resources asynchronously
-    fetcher = GoogleDocFetcher(settings=PortfolioGenSettings)
+    fetcher = GoogleDocExportFetcher(settings=PortfolioGenSettings)
     fetcher.fetch()
 
     build_site(portfolio, {}, site_dir, output_dir)

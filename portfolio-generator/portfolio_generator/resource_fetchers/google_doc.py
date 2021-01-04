@@ -3,11 +3,18 @@ import io
 import json
 import os
 
-from apiclient import discovery
-from google.oauth2 import service_account
-from googleapiclient.errors import HttpError
-from googleapiclient.http import MediaIoBaseDownload
-from httplib2 import HttpLib2Error
+FETCHER_DEPENDENCIES_INSTALLED = False
+
+try:
+    from apiclient import discovery
+    from google.oauth2 import service_account
+    from googleapiclient.errors import HttpError
+    from googleapiclient.http import MediaIoBaseDownload
+    from httplib2 import HttpLib2Error
+    FETCHER_DEPENDENCIES_INSTALLED = True
+except ImportError:
+    pass
+
 from pydantic import BaseModel, Field
 
 from ..exceptions import ResourceFetchError

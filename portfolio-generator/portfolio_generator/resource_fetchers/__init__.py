@@ -1,4 +1,4 @@
-from .google_doc import GoogleDocFetcher
+from .google_doc import GoogleDocExportFetcher
 from .github_actions import GitHubActionsArtifactFetcher
 
 RESOURCE_TYPE_FETCHERS = {

@@ -11,15 +11,9 @@ from ..settings import PortfolioResource
 class ResourceFetcher(ABC):
     extra_config_cls: Type[pydantic.BaseModel]
 
-    def __init__(self, settings) -> None:
+    def __init__(self, settings: PortfolioResource) -> None:
         self.settings = settings
-
-        try:
-            self.fetcher_config = self.extra_config_cls(**self.settings)
-        except pydantic.ValidationError as e:
-            raise ResourceFetchError(
-                "Could not initialize resource fetcher of type {resource_type}: {e}"
-            ) from e
+        self.fetcher_config = self.extra_config_cls(**self.settings)
 
     @abstractmethod
     async def fetch(self) -> Iterator[Path]:
