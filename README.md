@@ -2,4 +2,10 @@
 
 # Source of `nigelhaney.com`
 
-Developed with Tailwind CSS and Vanilla Javascript.
+Developed with Tailwind CSS and Vanilla JavaScript.
+
+## Developing (so I don't forget lol...)
+
+1. Install dependencies: `npm install`
+2. Build tailwindcss: `npm run-script build`
+3. Serve local directory: `python -m http.server --directory public`
