@@ -16,6 +16,9 @@
         pkgs = nixpkgs.legacyPackages.${system};
       in
       {
+        packages = {
+          default = import ./default.nix { inherit pkgs; };
+        };
         devShells.default = pkgs.mkShellNoCC {
           packages = with pkgs; [
             # Used for building tailwindcss
