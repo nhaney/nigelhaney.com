@@ -17,12 +17,12 @@
       in
       {
         packages = {
-          default = import ./default.nix { inherit pkgs; };
+          default = pkgs.callPackage ./default.nix {};
         };
         devShells.default = pkgs.mkShellNoCC {
           packages = with pkgs; [
-            # Used for building tailwindcss
-            nodejs
+            # Used for styling the website.
+            tailwindcss
             # Used for static site generation and local site hosting
             python3
             # Used for print to pdf functionality
