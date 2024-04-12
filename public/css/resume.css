@@ -1,0 +1,151 @@
+/********************************
+Resume header
+*********************************/
+
+header {
+    background-color: rgb(229 231 235 / 0.75);
+    border-bottom: 3px solid;
+}
+
+
+#resume-header-container {
+    max-width: 60rem;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+}
+
+#resume-header-name {
+    font-size: 3rem;
+    /*text-align: center;*/
+    font-family: 'Fira Code';
+    /* https://superuser.com/questions/361297/what-colour-is-the-dark-green-on-old-fashioned-green-screen-computer-displays */
+}
+
+/* Make it look like I am a cool hacker with the terminal prompt.*/
+#resume-header-name:before {
+    content:"> ";
+}
+
+#resume-header-name:hover {
+    color: rgb(34 197 94 / 0.75);
+}
+
+#resume-header-link-container {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    /*background-color: red;*/
+}
+
+
+.resume-header-link-icon {
+    /*display: block;*/
+    vertical-align: text-top;
+}
+
+/********************************
+Resume content
+*********************************/
+#resume-content-container {
+    max-width: 60rem;
+    margin: auto;
+}
+
+.resume-content-section {
+    margin-left: 1rem;
+}
+
+.resume-content-section-title {
+    border-bottom: 2px solid;
+}
+
+.resume-content-company-and-title-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    border-bottom: 1px solid;
+}
+
+.resume-content-company-name {
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.resume-content-job-title-list {
+    list-style-type: none;
+    padding: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.job-title-list-item {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    width: 21rem;
+    font-style: italic;
+}
+
+/* TODO: Can we align this some other way? */
+.job-title-years {
+    width: 6.1rem;
+}
+
+
+.job-accomplishments-list {
+    padding-left: 2rem;
+}
+
+.job-accomplishments-list > li {
+    padding: 0.25rem 0 0.25rem 0;
+}
+
+.job-technologies {
+    padding-left: 1rem;
+}
+
+
+/* Download link */
+#resume-download-link {
+    margin-top: 5rem;
+    color: blue;
+}
+
+/* Print formatting */
+@media print {
+    #resume-download-link {
+        display: none;
+    }
+
+    :root {
+        font-size: 12px;
+    }
+
+    body {
+        font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        line-height: 1.5;
+    }
+}
+
+
+/* Common styling */
+body {
+    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    line-height: 1.5;
+}
+
+
+a {
+    color: inherit;
+    text-decoration: inherit;
+}
+
+h2 {
+    margin: 0;
+}
+

@@ -29,6 +29,8 @@
             chromium
             # Used for running build commands for project.
             just
+            # Used for live server.
+            nodePackages.live-server
           ];
         };
       }
