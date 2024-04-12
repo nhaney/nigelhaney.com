@@ -2,23 +2,18 @@
 Resume header
 *********************************/
 
-header {
-    background-color: rgb(229 231 235 / 0.75);
-    border-bottom: 3px solid;
-}
-
-
 #resume-header-container {
     max-width: 60rem;
     margin: auto;
+    padding-top: 2rem;
     display: flex;
     flex-direction: column;
     align-content: center;
+    gap: 1.5rem;
 }
 
 #resume-header-name {
     font-size: 3rem;
-    /*text-align: center;*/
     font-family: 'Fira Code';
     /* https://superuser.com/questions/361297/what-colour-is-the-dark-green-on-old-fashioned-green-screen-computer-displays */
 }
@@ -44,7 +39,6 @@ header {
 
 
 .resume-header-link-icon {
-    /*display: block;*/
     vertical-align: text-top;
 }
 
@@ -62,6 +56,8 @@ Resume content
 
 .resume-content-section-title {
     border-bottom: 2px solid;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
 }
 
 .resume-content-company-and-title-container {
@@ -106,7 +102,18 @@ Resume content
 }
 
 .job-technologies {
+    margin-top: 1rem;
     padding-left: 1rem;
+}
+
+.resume-content-work-job {
+    margin-bottom: 1rem;
+}
+
+.resume-content-education-and-years-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
 }
 
 
@@ -126,26 +133,58 @@ Resume content
         font-size: 12px;
     }
 
+    @page {
+        margin: 0;
+        padding: 0;
+        /* 🇺🇸 based.*/
+        size: 8.5in 11in
+    }
+
     body {
         font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         line-height: 1.5;
     }
+
+    #resume-header-name:after {
+        display: none !important;
+    }
 }
 
 
-/* Common styling */
+/********************************
+Common styling
+*********************************/
+
+/* Zeroes out browser default margins. */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    background-color: rgb(229 231 235 / 0.75);
+    border-bottom: 3px solid;
+    margin: 0;
+    padding: 0;
+}
+
+/* Prefer sans-serif font and bump up line height */
 body {
     font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     line-height: 1.5;
 }
 
-
+/* Undecorate links */
 a {
     color: inherit;
     text-decoration: inherit;
 }
 
-h2 {
-    margin: 0;
+/* Needed to render emojis properly in print to PDF and to make them aligned. */
+span {
+    font-weight: normal;
+    vertical-align: text-bottom;
 }
-
