@@ -141,7 +141,7 @@ Resume content
     }
 
     body {
-        font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+        font-family: "DejaVu Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
         line-height: 1.5;
     }
 
@@ -171,7 +171,7 @@ header {
     padding: 0;
 }
 
-/* Prefer sans-serif font and bump up line height */
+/* Prefer sans-serif font and bump up line height. */
 body {
     font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     line-height: 1.5;
