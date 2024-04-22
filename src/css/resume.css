@@ -61,6 +61,7 @@ Resume content
 
 .resume-content-company-and-title-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
     border-bottom: 1px solid;
@@ -69,6 +70,7 @@ Resume content
 .resume-content-company-name {
     margin-top: 0;
     margin-bottom: 0;
+    align-self: flex-end;
 }
 
 .resume-content-job-title-list {
@@ -80,15 +82,17 @@ Resume content
 
 .job-title-list-item {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     gap: 1rem;
-    width: 21rem;
+    /*width: 21rem;*/
     font-style: italic;
 }
 
 /* TODO: Can we align this some other way? */
 .job-title-years {
-    width: 6.1rem;
+    align-self: flex-end;
+    /*min-width: 6.1rem;*/
 }
 
 
@@ -111,6 +115,7 @@ Resume content
 
 .resume-content-education-and-years-container {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
     align-items: flex-start;
 }
@@ -143,7 +148,7 @@ Resume content
         display: none !important;
     }
 
-    /* Self-hosted fonts setup for printing. */
+    /* Self-hosted fonts setup for printing. Needed for resume generation automation. */
     @font-face {
         font-family: "Fira Code";
         font-style: normal;
@@ -188,11 +193,9 @@ Resume content
     }
 }
 
-
 /********************************
 Common styling
 *********************************/
-
 /* Zeroes out browser default margins. */
 *,
 *::before,
@@ -210,7 +213,7 @@ header {
     padding: 0;
 }
 
-/* Prefer sans-serif font and bump up line height. */
+/* Select intended fonts if they are available, if not use sans serif system fonts. */
 body {
     font-family: "DejaVu Sans", "Noto Color Emoji", ui-sans-serif,  sans-serif, system-ui;
     line-height: 1.5;
