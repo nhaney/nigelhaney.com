@@ -15,7 +15,6 @@ Resume header
 #resume-header-name {
     font-size: 3rem;
     font-family: 'Fira Code';
-    /* https://superuser.com/questions/361297/what-colour-is-the-dark-green-on-old-fashioned-green-screen-computer-displays */
 }
 
 /* Make it look like I am a cool hacker with the terminal prompt.*/
@@ -140,13 +139,52 @@ Resume content
         size: 8.5in 11in
     }
 
-    body {
-        font-family: "DejaVu Sans", ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
-        line-height: 1.5;
-    }
-
     #resume-header-name:after {
         display: none !important;
+    }
+
+    /* Self-hosted fonts setup for printing. */
+    @font-face {
+        font-family: "Fira Code";
+        font-style: normal;
+        src:
+            local("Fira Code");
+    }
+
+    @font-face {
+        font-family: "DejaVu Sans";
+        font-style: normal;
+        font-weight: 400;
+        src:
+            local("DejaVuSans")
+            local("DejaVu Sans")
+    }
+
+    @font-face {
+        font-family: "DejaVu Sans";
+        font-style: bold;
+        font-weight: 700;
+        src:
+            local("DejaVuSans-Bold")
+            local("DejaVu Sans Bold");
+    }
+
+    @font-face {
+        font-family: "DejaVu Sans";
+        font-style: italic;
+        font-weight: 400;
+        src:
+            local("DejaVuSans-Oblique")
+            local("DejaVu Sans Oblique");
+    }
+
+    @font-face {
+        font-family: "Noto Color Emoji";
+        font-style: normal;
+        font-weight: 400;
+        stretch: 100;
+        src:
+            local("Noto Color Emoji");
     }
 }
 
@@ -164,6 +202,7 @@ Common styling
     box-sizing: border-box;
 }
 
+/* Creates header that is consistent with the rest of the site. */
 header {
     background-color: rgb(229 231 235 / 0.75);
     border-bottom: 3px solid;
@@ -173,7 +212,7 @@ header {
 
 /* Prefer sans-serif font and bump up line height. */
 body {
-    font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    font-family: "DejaVu Sans", "Noto Color Emoji", ui-sans-serif,  sans-serif, system-ui;
     line-height: 1.5;
 }
 
@@ -188,3 +227,4 @@ span {
     font-weight: normal;
     vertical-align: text-bottom;
 }
+
