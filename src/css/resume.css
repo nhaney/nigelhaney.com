@@ -16,7 +16,7 @@ Resume header
 /* Make it look like I am a cool hacker with the terminal prompt and programming font.*/
 #resume-header-name {
     font-size: 3rem;
-    font-family: 'Fira Code';
+    font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
 
 #resume-header-name:before {
@@ -95,6 +95,7 @@ Resume content
     margin-bottom: 0;
     margin-left: 0;
     align-self: flex-end;
+    flex-grow: 1;
 }
 
 .resume-content-job-title-list {
@@ -102,6 +103,7 @@ Resume content
     padding: 0;
     margin-top: 0;
     margin-bottom: 0;
+    flex-basis: 20rem;
 }
 
 .job-title-list-item {
@@ -109,7 +111,6 @@ Resume content
     flex-wrap: wrap;
     justify-content: space-between;
     column-gap: 1rem;
-    /*width: 21rem;*/
     font-style: italic;
 }
 
@@ -166,6 +167,7 @@ Resume content
         size: 8.5in 11in
     }
 
+    /* Don't include link back to home page on printed pdf. */
     #resume-header-name:after {
         display: none !important;
     }
