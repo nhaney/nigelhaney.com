@@ -92,14 +92,23 @@
     import disableWebGLFeatures from "/js/utils.js"
     disableWebGLFeatures();
 
+    let fishGameCanvas = document.getElementById("fish-game");
+
     function startGame() {
-        document.querySelector("#fish-game").style.visibility = "visible";
-        document.querySelector("#fish-game-placeholder").remove();
-        document.querySelector("#start-fish-game-label").style.visibility = "hidden";
+        fishGameCanvas.style.visibility = "visible";
+        fishGameCanvas.focus();
+        document.getElementById("fish-game-placeholder").remove();
+        document.getElementById("start-fish-game-label").style.visibility = "hidden";
         init();
     }
 
-    document.querySelector("#fish-game-placeholder").addEventListener("click", startGame);
+    document.getElementById("fish-game-placeholder").addEventListener("click", startGame);
+
+    window.addEventListener('keydown', function(e) {
+      if(e.target == fishGameCanvas && e.keyCode == 32) {
+        e.preventDefault();
+      }
+    });
 </script>
 
 </html>
