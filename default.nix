@@ -1,4 +1,4 @@
-{ stdenv, python3, chromium, makeFontsConf, noto-fonts-emoji, fira-code, dejavu_fonts }:
+{ stdenv, python3, chromium, makeFontsConf, noto-fonts-emoji, fira-code, dejavu_fonts, fish-game }:
 let 
     fontPkgs = [
         dejavu_fonts
@@ -27,6 +27,8 @@ stdenv.mkDerivation {
 
         # Copy html files from src to output directory
         cp -rf . $out/
+
+        cp -rf ${fish-game}/bin/* $out/fish-game
 
         # Use chrome to create PDF of resume.
         chromium-browser --no-sandbox --headless --no-margins --no-pdf-header-footer --print-to-pdf-no-header --run-all-compositor-stages-before-draw --print-to-pdf=$out/resources/resume.pdf $out/resume/index.html
