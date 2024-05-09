@@ -8,12 +8,15 @@
     flake-utils = {
       url = "github:numtide/flake-utils";
     };
+    fish-game = {
+        url = "git+https://github.com/nhaney/fish-game?ref=update-bevy-version&rev=2867172ed8323ba0dac63cb7e8de7b5da2581e5f";
+    };
   };
 
-  outputs = { nixpkgs, flake-utils, ... }:
+  outputs = { nixpkgs, flake-utils, fish-game, ... }:
     flake-utils.lib.eachDefaultSystem(system:
       let
-        pkgs = nixpkgs.legacyPackages.${system};
+        pkgs = import nixpkgs { inherit system; overlays = [ (final: prev: { fish-game = fish-game.packages.${system}.wasm; })]; };
       in
       {
         packages = {
