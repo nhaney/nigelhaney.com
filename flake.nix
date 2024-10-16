@@ -9,7 +9,7 @@
       url = "github:numtide/flake-utils";
     };
     fish-game = {
-        url = "git+https://github.com/nhaney/fish-game?ref=update-bevy-version&rev=2867172ed8323ba0dac63cb7e8de7b5da2581e5f";
+        url = "git+https://github.com/nhaney/fish-game";
     };
   };
 

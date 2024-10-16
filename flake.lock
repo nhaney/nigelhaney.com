@@ -7,17 +7,15 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1715140490,
-        "narHash": "sha256-WSSOvEfG9yxNS6mK+hRG7oBSWxw09z5TN9dR7hGeyoY=",
-        "ref": "update-bevy-version",
-        "rev": "2867172ed8323ba0dac63cb7e8de7b5da2581e5f",
-        "revCount": 91,
+        "lastModified": 1715213623,
+        "narHash": "sha256-5AR9R4wJFXy1PWGcD6eRsuk3r/W8/7ZHAeCn660Tcy8=",
+        "ref": "refs/heads/master",
+        "rev": "8dd3a70c47d6fa26a1dea8e21e5dd4a269a5efe8",
+        "revCount": 93,
         "type": "git",
         "url": "https://github.com/nhaney/fish-game"
       },
       "original": {
-        "ref": "update-bevy-version",
-        "rev": "2867172ed8323ba0dac63cb7e8de7b5da2581e5f",
         "type": "git",
         "url": "https://github.com/nhaney/fish-game"
       }
