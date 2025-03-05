@@ -9,18 +9,28 @@
       url = "github:numtide/flake-utils";
     };
     fish-game = {
-        url = "git+https://github.com/nhaney/fish-game";
+      url = "git+https://github.com/nhaney/fish-game";
     };
   };
 
-  outputs = { nixpkgs, flake-utils, fish-game, ... }:
-    flake-utils.lib.eachDefaultSystem(system:
+  outputs =
+    {
+      nixpkgs,
+      flake-utils,
+      fish-game,
+      ...
+    }:
+    flake-utils.lib.eachDefaultSystem (
+      system:
       let
-        pkgs = import nixpkgs { inherit system; overlays = [ (final: prev: { fish-game = fish-game.packages.${system}.wasm; })]; };
+        pkgs = import nixpkgs {
+          inherit system;
+          overlays = [ (final: prev: { fish-game = fish-game.packages.${system}.wasm; }) ];
+        };
       in
       {
         packages = {
-          default = pkgs.callPackage ./default.nix {};
+          default = pkgs.callPackage ./default.nix { };
         };
         devShells.default = pkgs.mkShellNoCC {
           packages = with pkgs; [
