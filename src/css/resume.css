@@ -7,10 +7,24 @@ Resume header
     margin: auto;
     padding-top: 2rem;
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
     align-content: center;
     row-gap: 1.5rem;
 }
+
+/* Make sure that the links appear under my name after a certain width.
+@media only screen and (max-width: 850px) {
+    #resume-header-name {
+        font-size: 2.5rem;
+    }
+
+    #resume-header-container {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+}*/
 
 
 /* Make it look like I am a cool hacker with the terminal prompt and programming font.*/
@@ -25,9 +39,14 @@ Resume header
 
 /* Make sure my name stays on one line even on a small screen */
 @media only screen and (max-width: 450px) {
-  #resume-header-name {
-      font-size: 2.5rem;
-  }
+    #resume-header-name {
+        font-size: 2.5rem;
+    }
+
+    #resume-header-container {
+        flex-direction: column;
+        justify-content: flex-start;
+    }
 }
 
 @media only screen and (max-width: 350px) {
@@ -51,7 +70,6 @@ Resume header
     align-items: center;
     margin-left: 1rem;
     margin-right: 1rem;
-    /*background-color: red;*/
 }
 
 .resume-header-link {
@@ -124,7 +142,7 @@ Resume content
 }
 
 .job-accomplishments-list > li {
-    padding: 0.25rem 0 0.25rem 0;
+    padding: 0.33rem 0 .33rem 0;
 }
 
 .job-technologies {

@@ -12,3 +12,6 @@ function disableWebGLFeatures() {
 
 
 export default disableWebGLFeatures;
+
+// Sets year in copyright footer to the proper year.
+document.getElementById("year").innerHTML = new Date().getFullYear();
