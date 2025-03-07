@@ -104,8 +104,9 @@ Resume content
     flex-wrap: wrap;
     column-gap: 1rem;
     justify-content: space-between;
-    align-items: flex-start;
+    align-items: flex-end;
     border-bottom: 1px solid;
+    margin-bottom: .5rem;
 }
 
 .resume-content-company-name {
@@ -118,7 +119,7 @@ Resume content
 
 .resume-content-job-title-list {
     list-style-type: none;
-    padding: 0;
+    /*padding: 0;*/
     margin-top: 0;
     margin-bottom: 0;
     flex-basis: 22rem;
@@ -142,11 +143,11 @@ Resume content
 }
 
 .job-accomplishments-list > li {
-    padding: 0.33rem 0 .33rem 0;
+    padding: 0.25rem 0 .25rem 0;
 }
 
 .job-technologies {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     padding-left: 1rem;
 }
 
@@ -161,6 +162,11 @@ Resume content
     align-items: flex-start;
 }
 
+.program-name {
+    font-family: 'Fira Code', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+    font-weight: normal;
+    vertical-align: baseline;
+}
 
 /* Download link */
 #resume-download-link {
@@ -181,7 +187,6 @@ Resume content
     @page {
         margin: 0;
         padding: 0;
-        /* 🇺🇸 based.*/
         size: 8.5in 11in
     }
 
@@ -273,4 +278,3 @@ span {
     font-weight: normal;
     vertical-align: text-bottom;
 }
-
