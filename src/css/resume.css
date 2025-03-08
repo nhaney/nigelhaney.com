@@ -265,6 +265,7 @@ header {
 body {
     font-family: "DejaVu Sans", "Noto Color Emoji", ui-sans-serif,  sans-serif, system-ui;
     line-height: 1.5;
+
 }
 
 /* Undecorate links */
@@ -277,4 +278,18 @@ a {
 span {
     font-weight: normal;
     vertical-align: text-bottom;
+}
+
+/* Background text for ATS */
+#background-text {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+    overflow: hidden;
+    white-space: pre-line;
+    font-size: .25rem;
+    color: white;
 }
