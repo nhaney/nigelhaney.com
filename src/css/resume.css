@@ -180,6 +180,11 @@ Resume content
         display: none;
     }
 
+    /* Include white ATS background text */
+    #background-text {
+        display: block !important;
+    }
+
     :root {
         font-size: 12px;
     }
@@ -290,6 +295,7 @@ span {
     z-index: -1;
     overflow: hidden;
     white-space: pre-line;
-    font-size: .25rem;
+    font-size: 1rem;
     color: white;
+    display: none;
 }
